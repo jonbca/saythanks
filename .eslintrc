@@ -1,0 +1,20 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:jest/recommended",
+        "plugin:prettier/recommended",
+        "react-app"
+    ],
+    "plugins": ["jest", "@typescript-eslint", "react"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "env": {
+        "jest/globals": true,
+        "browser": true,
+        "es6": true
+    }
+}
