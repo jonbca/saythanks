@@ -14,14 +14,18 @@ interface GridProps {
 }
 
 class Grid extends Component<GridProps, ReadonlyArray<ThankYou>> {
-    public constructor(props: GridProps) {
-        super(props);
+    public constructor({ thanks }: GridProps) {
+        super({ thanks });
 
-        this.state = [...props.thanks];
+        this.state = [...thanks];
     }
 
     private renderThankYou(thankYou: ThankYou): ReactNode {
-        return <Card {...thankYou} />;
+        return (
+            <li>
+                <Card {...thankYou} />
+            </li>
+        );
     }
 
     public render(): ReactNode {
