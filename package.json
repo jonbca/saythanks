@@ -29,8 +29,12 @@
         "not op_mini all"
     ],
     "devDependencies": {
+        "@types/enzyme": "^3.9.1",
+        "@types/enzyme-adapter-react-16": "^1.0.5",
         "@typescript-eslint/eslint-plugin": "^1.5.0",
         "@typescript-eslint/parser": "^1.5.0",
+        "enzyme": "^3.9.0",
+        "enzyme-adapter-react-16": "^1.11.2",
         "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-jest": "^22.4.1",
         "eslint-plugin-prettier": "^3.0.1",
