@@ -10,6 +10,11 @@ interface CardProp {
     bgColour?: string;
 }
 
-const Card = ({ toName }: CardProp): JSX.Element => <h1>Hello, {toName}</h1>;
+const Card = ({ toName, message }: CardProp): JSX.Element => (
+    <div>
+        <h1>{toName}</h1>
+        <p>{message}</p>
+    </div>
+);
 
 export default Card;
