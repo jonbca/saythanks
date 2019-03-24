@@ -7,6 +7,7 @@ export interface ThankYou {
     fromName?: string;
     timestamp: Date;
     message: string;
+    id: number;
 }
 
 interface GridProps {
@@ -22,7 +23,7 @@ class Grid extends Component<GridProps, ReadonlyArray<ThankYou>> {
 
     private renderThankYou(thankYou: ThankYou): ReactNode {
         return (
-            <li>
+            <li key={thankYou.id}>
                 <Card {...thankYou} />
             </li>
         );
