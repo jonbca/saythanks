@@ -14,11 +14,11 @@ interface GridProps {
     thanks: ThankYou[];
 }
 
-class Grid extends Component<GridProps, ReadonlyArray<ThankYou>> {
-    public constructor({ thanks }: GridProps) {
-        super({ thanks });
+class Grid extends Component<GridProps, GridProps> {
+    public constructor(props: GridProps) {
+        super(props);
 
-        this.state = [...thanks];
+        this.state = Object.assign({}, props);
     }
 
     private renderThankYou(thankYou: ThankYou): ReactNode {
@@ -30,7 +30,7 @@ class Grid extends Component<GridProps, ReadonlyArray<ThankYou>> {
     }
 
     public render(): ReactNode {
-        return <ul className="flex-grid">{this.state.map(this.renderThankYou)}</ul>;
+        return <ul className="flex-grid">{this.state.thanks.map(this.renderThankYou)}</ul>;
     }
 }
 
