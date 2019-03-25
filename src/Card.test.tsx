@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from './Card';
-import { configure, shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Card />', () => {
     test('it renders a card', () => {
