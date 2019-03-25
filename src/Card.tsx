@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Card.css';
 
 interface CardProp {
@@ -11,7 +10,7 @@ interface CardProp {
 }
 
 const Card = ({ toName, message }: CardProp): JSX.Element => (
-    <div>
+    <div className="card">
         <h1>{toName}</h1>
         <p>{message}</p>
     </div>
