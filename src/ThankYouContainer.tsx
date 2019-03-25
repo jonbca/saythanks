@@ -11,7 +11,7 @@ export interface ThankYou {
 }
 
 export interface ThankYouList {
-    thankYous: ReadonlyArray<ThankYou>;
+    thankYous: ThankYou[];
     lastModified: Date;
 }
 
@@ -42,12 +42,13 @@ class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouList> 
     }
 
     public render(): ReactNode {
-        return <Grid thanks={[]} />;
+        return <Grid thanks={this.state.thankYous.slice()} />;
     }
 
-    public componentDidMount(): void {
+    public async componentDidMount(): Promise<void> {
         if (this.props.loadThankYous) {
-            this.props.loadThankYous(this.props.url);
+            const thankYous = await this.props.loadThankYous(this.props.url);
+            this.setState(thankYous);
         }
     }
 }

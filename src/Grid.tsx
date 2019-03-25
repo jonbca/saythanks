@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactNode, PureComponent } from 'react';
 import Card from './Card';
 import './Grid.css';
 
@@ -14,13 +14,7 @@ interface GridProps {
     thanks: ThankYou[];
 }
 
-class Grid extends Component<GridProps, GridProps> {
-    public constructor(props: GridProps) {
-        super(props);
-
-        this.state = Object.assign({}, props);
-    }
-
+class Grid extends PureComponent<GridProps> {
     private renderThankYou(thankYou: ThankYou): ReactNode {
         return (
             <li key={thankYou.id}>
@@ -30,7 +24,7 @@ class Grid extends Component<GridProps, GridProps> {
     }
 
     public render(): ReactNode {
-        return <ul className="flex-grid">{this.state.thanks.map(this.renderThankYou)}</ul>;
+        return <ul className="flex-grid">{this.props.thanks.map(this.renderThankYou)}</ul>;
     }
 }
 
