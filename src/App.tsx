@@ -10,7 +10,7 @@ class App extends Component {
                     <h1>Hello world</h1>
                 </header>
                 <main>
-                    <ThankYouContainer url="http://www.mocky.io/v2/5c99569c320000743ed90893" />
+                    <ThankYouContainer url="http://localhost:4000" />
                 </main>
             </div>
         );
