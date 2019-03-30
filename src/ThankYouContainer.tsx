@@ -19,7 +19,7 @@ export interface ThankYouData {
 }
 
 export interface ThankYouContainerProps {
-    loadThankYous?: (url: string) => Promise<ThankYouData>;
+    loadThankYous: (url: string) => Promise<ThankYouData>;
     url: string;
     title?: string;
     refreshInterval: number;
@@ -51,18 +51,14 @@ class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouContai
     }
 
     public async componentDidMount(): Promise<void> {
-        if (this.props.loadThankYous) {
-            const loadThankYous = this.props.loadThankYous;
+        const setThankYouState = async (): Promise<void> => {
+            const thankYous = await this.props.loadThankYous(this.props.url);
+            this.setState(thankYous);
+        };
 
-            const setThankYouState = async (): Promise<void> => {
-                const thankYous = await loadThankYous(this.props.url);
-                this.setState(thankYous);
-            };
-
-            const timer = setInterval(setThankYouState, this.props.refreshInterval);
-            this.setState({ ...this.state, timer });
-            await setThankYouState();
-        }
+        const timer = setInterval(setThankYouState, this.props.refreshInterval);
+        this.setState({ ...this.state, timer });
+        setThankYouState();
     }
 
     public componentWillUnmount(): void {
