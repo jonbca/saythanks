@@ -24,7 +24,7 @@ function generateId({ toName, fromName, timestamp, message }: ThankYou): string 
 class Grid extends PureComponent<GridProps> {
     private renderThankYou(thankYou: ThankYou): ReactNode {
         return (
-            <li key={generateId(thankYou)}>
+            <li key={generateId(thankYou)} style={{ background: '#23ce45' }}>
                 <Card {...thankYou} />
             </li>
         );

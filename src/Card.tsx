@@ -6,7 +6,6 @@ interface CardProp {
     fromName?: string;
     message: string;
     timestamp: Date;
-    bgColour?: string;
 }
 
 const Card = ({ toName, message }: CardProp): JSX.Element => (
