@@ -10,7 +10,7 @@ class App extends Component {
                     <h1>Hello world</h1>
                 </header>
                 <main>
-                    <ThankYouContainer url="http://localhost:4000" />
+                    <ThankYouContainer url="http://localhost:3000/sample-thanks.json" />
                 </main>
             </div>
         );
