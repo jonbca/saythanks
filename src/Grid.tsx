@@ -31,7 +31,16 @@ class Grid extends PureComponent<GridProps> {
     }
 
     public render(): ReactNode {
-        return <ul className="flex-grid">{this.props.thanks.map(this.renderThankYou)}</ul>;
+        return (
+            <div className="thankyou-grid">
+                <header className="title-box">
+                    <h1>Hello world</h1>
+                </header>
+                <div className="card-box">
+                    <ul>{this.props.thanks.map(this.renderThankYou)}</ul>
+                </div>
+            </div>
+        );
     }
 }
 

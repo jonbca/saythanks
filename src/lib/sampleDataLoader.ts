@@ -12,7 +12,7 @@ export interface ThankYouList {
 }
 
 export default function loadSampleData(): Promise<ThankYouList> {
-    const thankYous: ThankYou[] = Array.from({ length: 16 }, () => ({
+    const thankYous: ThankYou[] = Array.from({ length: 12 }, () => ({
         toName: faker.name.findName(),
         fromName: faker.name.findName(),
         timestamp: faker.date.recent(),
