@@ -7,12 +7,10 @@ export interface ThankYou {
     fromName?: string;
     timestamp: Date;
     message: string;
-    id: number;
 }
 
 export interface ThankYouList {
     thankYous: ThankYou[];
-    lastModified: Date;
 }
 
 export interface ThankYouContainerProps {
@@ -38,7 +36,7 @@ class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouList> 
     public constructor(props: ThankYouContainerProps) {
         super(props);
 
-        this.state = { thankYous: [], lastModified: new Date() };
+        this.state = { thankYous: [] };
     }
 
     public render(): ReactNode {
