@@ -12,6 +12,7 @@ export interface ThankYou {
 
 interface GridProps {
     thanks: ThankYou[];
+    title: string;
 }
 
 function generateId({ toName, fromName, timestamp, message }: ThankYou): string {
@@ -22,6 +23,10 @@ function generateId({ toName, fromName, timestamp, message }: ThankYou): string 
 }
 
 class Grid extends PureComponent<GridProps> {
+    public static defaultProps = {
+        title: 'Thank-you!',
+    };
+
     private renderThankYou(thankYou: ThankYou): ReactNode {
         return (
             <li key={generateId(thankYou)} style={{ background: '#23ce45' }}>
@@ -34,7 +39,7 @@ class Grid extends PureComponent<GridProps> {
         return (
             <div className="thankyou-grid">
                 <header className="title-box">
-                    <h1>Hello world</h1>
+                    <h1>{this.props.title}</h1>
                 </header>
                 <div className="card-box">
                     <ul>{this.props.thanks.map(this.renderThankYou)}</ul>

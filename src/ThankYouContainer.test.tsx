@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('<ThankYouContainer />', () => {
     test('it renders a grid', () => {
-        const thankYouContainer = shallow(<ThankYouContainer url="foo" />);
+        const thankYouContainer = shallow(<ThankYouContainer url="foo" title="Hello world" />);
 
         expect(thankYouContainer.find(Grid)).toHaveLength(1);
     });
@@ -17,7 +17,7 @@ describe('<ThankYouContainer />', () => {
         const loader: (url: string) => Promise<ThankYouList> = jest
             .fn()
             .mockReturnValue(Promise.resolve({ thankYouList: [] }));
-        mount(<ThankYouContainer loadThankYous={loader} url="" />);
+        mount(<ThankYouContainer loadThankYous={loader} url="" title="Hello world" />);
 
         expect(loader).toHaveBeenCalled();
     });

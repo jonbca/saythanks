@@ -16,6 +16,7 @@ export interface ThankYouList {
 export interface ThankYouContainerProps {
     loadThankYous?: (url: string) => Promise<ThankYouList>;
     url: string;
+    title?: string;
 }
 
 const thankYouLoader = async (url: string): Promise<ThankYouList> => {
@@ -40,7 +41,7 @@ class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouList> 
     }
 
     public render(): ReactNode {
-        return <Grid thanks={this.state.thankYous.slice()} />;
+        return <Grid thanks={this.state.thankYous.slice()} {...this.props} />;
     }
 
     public async componentDidMount(): Promise<void> {

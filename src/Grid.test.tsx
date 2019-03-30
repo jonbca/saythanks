@@ -7,11 +7,28 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 describe('<Grid />', () => {
-    it('renders an empty grid', () => {
-        const thanks: ThankYou[] = [];
-        const grid = shallow(<Grid thanks={thanks} />);
+    describe('empty grid', () => {
+        it('renders an empty grid', () => {
+            const thanks: ThankYou[] = [];
+            const grid = shallow(<Grid thanks={thanks} />);
 
-        expect(grid.find(Card)).toHaveLength(0);
+            expect(grid.find(Card)).toHaveLength(0);
+        });
+
+        it('renders the default title', () => {
+            const thanks: ThankYou[] = [];
+
+            const grid = shallow(<Grid thanks={thanks} />);
+
+            expect(grid.find('h1').text()).toEqual('Thank-you!');
+        });
+
+        it('renders a custom title', () => {
+            const thanks: ThankYou[] = [];
+            const grid = shallow(<Grid thanks={thanks} title="My test code" />);
+
+            expect(grid.find('h1').text()).toEqual('My test code');
+        });
     });
 
     it('renders a grid with a card', () => {
@@ -21,7 +38,6 @@ describe('<Grid />', () => {
                 fromName: 'Bar',
                 message: 'Msg',
                 timestamp: new Date(),
-                id: 1,
             },
         ];
         const grid = shallow(<Grid thanks={thanks} />);
