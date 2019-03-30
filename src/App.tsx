@@ -1,9 +1,9 @@
 import React, { Component, ReactNode } from 'react';
 import './App.css';
-import ThankYouContainer, { ThankYouList } from './ThankYouContainer';
+import ThankYouContainer, { ThankYouData } from './ThankYouContainer';
 import sampleDataLoader from './lib/sampleDataLoader';
 
-function sampleDataLoaderIfDevelopment(): (() => Promise<ThankYouList>) | undefined {
+function sampleDataLoaderIfDevelopment(): (() => Promise<ThankYouData>) | undefined {
     return window.location.search.indexOf('devMode=true') >= 0 ? sampleDataLoader : undefined;
 }
 
