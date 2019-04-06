@@ -3,11 +3,5 @@
     "workspaces": [
         "client",
         "stack"
-    ],
-    "scripts": {
-        "start": "cd client && react-scripts start",
-        "build": "cd client && react-scripts build",
-        "test": "cd client && react-scripts test",
-        "eject": "cd client && react-scripts eject"
-    }
+    ]
 }
