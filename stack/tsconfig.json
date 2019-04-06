@@ -18,5 +18,6 @@
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
         "outDir": "target"
-    }
+    },
+    "include": ["bin", "lib"]
 }
