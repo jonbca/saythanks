@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, mount } from 'enzyme';
 import Grid from './Grid';
 import ThankYouContainer, { ThankYouData } from './ThankYouContainer';
 import Adapter from 'enzyme-adapter-react-16';
@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('<ThankYouContainer />', () => {
     test('it renders a grid', () => {
-        const thankYouContainer = shallow(<ThankYouContainer url="foo" title="Hello world" />);
+        const thankYouContainer = mount(<ThankYouContainer url="foo" title="Hello world" />);
 
         expect(thankYouContainer.find(Grid)).toHaveLength(1);
     });
@@ -43,10 +43,12 @@ describe('<ThankYouContainer />', () => {
                 .fn()
                 .mockReturnValue(Promise.resolve({ thankYous: [] }));
 
-            mount(<ThankYouContainer loadThankYous={loader} url="" title="Hello world" />);
+            const container = mount(<ThankYouContainer loadThankYous={loader} url="" title="Hello world" />);
 
             expect(setInterval).toHaveBeenCalledTimes(1);
             expect(setInterval).toHaveBeenCalledWith(expect.any(Function), 30000);
+
+            container.unmount();
         });
 
         test('it calls the refresh function on an interval', () => {
@@ -54,12 +56,12 @@ describe('<ThankYouContainer />', () => {
                 .fn()
                 .mockReturnValue(Promise.resolve({ thankYous: [] }));
 
-            mount(<ThankYouContainer loadThankYous={loader} url="" title="Hello world" />);
+            const container = mount(<ThankYouContainer loadThankYous={loader} url="" title="Hello world" />);
 
             expect(loader).toHaveBeenCalledTimes(1);
 
             jest.runOnlyPendingTimers();
-
+            container.unmount();
             expect(loader).toHaveBeenCalledTimes(2);
         });
 
