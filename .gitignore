@@ -10,6 +10,7 @@ node_modules
 
 # production
 /client/build
+/stack/target
 
 # misc
 .DS_Store
