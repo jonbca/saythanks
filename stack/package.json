@@ -18,9 +18,13 @@
         "typescript": "^3.3.3333"
     },
     "dependencies": {
+        "@aws-cdk/assets": "^0.28.0",
+        "@aws-cdk/aws-cloudwatch": "^0.28.0",
         "@aws-cdk/aws-events": "^0.28.0",
         "@aws-cdk/aws-iam": "^0.28.0",
         "@aws-cdk/aws-kms": "^0.28.0",
+        "@aws-cdk/aws-lambda": "^0.28.0",
+        "@aws-cdk/aws-logs": "^0.28.0",
         "@aws-cdk/aws-s3": "^0.28.0",
         "@aws-cdk/aws-s3-notifications": "^0.28.0",
         "@aws-cdk/cdk": "^0.28.0",

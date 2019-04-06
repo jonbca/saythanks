@@ -19,5 +19,5 @@
         "strictPropertyInitialization": false,
         "outDir": "target"
     },
-    "include": ["bin", "lib"]
+    "include": ["bin", "lib", "lambda"]
 }
