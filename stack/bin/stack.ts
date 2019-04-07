@@ -4,4 +4,4 @@ import { SayThanksStack } from '../lib/saythanks-stack';
 import cdk = require('@aws-cdk/cdk');
 
 const app = new cdk.App();
-new SayThanksStack(app, 'StackStack');
+const stack = new SayThanksStack(app, 'ThanksStack');
