@@ -1,6 +1,6 @@
 import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 
-export default async function handler(event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
+export async function handler(event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
     console.log('request: ', JSON.stringify(event));
 
     return {
