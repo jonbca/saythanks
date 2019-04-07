@@ -8,7 +8,7 @@ interface PostThanksLambdaProps {
 }
 
 export default class PostThanksLambda extends cdk.Construct {
-    public readonly updateLambda: lambda.Function;
+    public readonly handler: lambda.Function;
 
     public constructor(scope: cdk.Construct, id: string, props: PostThanksLambdaProps) {
         super(scope, id);
@@ -21,14 +21,14 @@ export default class PostThanksLambda extends cdk.Construct {
             .addAction('s3:ListBucket')
             .addResource(props.bucketArn);
 
-        this.updateLambda = new lambda.Function(this, 'HelloHandler', {
+        this.handler = new lambda.Function(this, 'HelloHandler', {
             runtime: lambda.Runtime.NodeJS810,
             code: lambda.Code.asset('target/lambda'),
             handler: 'index.handler'
         });
 
-        this.updateLambda.addEnvironment('SERVER_BUCKET_NAME', props.bucketName);
-        this.updateLambda.addToRolePolicy(accessBucketPolicy);
-        this.updateLambda.addToRolePolicy(accessBucketObjectPolicy);
+        this.handler.addEnvironment('SERVER_BUCKET_NAME', props.bucketName);
+        this.handler.addToRolePolicy(accessBucketPolicy);
+        this.handler.addToRolePolicy(accessBucketObjectPolicy);
     }
 }
