@@ -1,5 +1,6 @@
 import cdk = require('@aws-cdk/cdk');
 import s3 = require('@aws-cdk/aws-s3');
+import cloudfront = require('@aws-cdk/aws-cloudfront');
 
 export default class ServerBucket extends cdk.Construct {
     public readonly bucket: s3.Bucket;
@@ -19,5 +20,21 @@ export default class ServerBucket extends cdk.Construct {
         this.bucketArn = this.bucket.bucketArn;
 
         this.bucket.export();
+        this.addCloudfrontDistribution(this.bucket);
+    }
+
+    private addCloudfrontDistribution(bucket: s3.Bucket) {
+        const distribution = new cloudfront.CloudFrontWebDistribution(this, 'ClientAppDistribution', {
+            originConfigs: [
+                {
+                    s3OriginSource: {
+                        s3BucketSource: bucket
+                    },
+                    behaviors: [ {isDefaultBehavior: true }]
+                }
+            ]
+        });
+
+        return distribution;
     }
 }

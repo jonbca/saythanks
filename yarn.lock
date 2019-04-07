@@ -50,6 +50,17 @@
     "@aws-cdk/aws-iam" "^0.28.0"
     "@aws-cdk/cdk" "^0.28.0"
 
+"@aws-cdk/aws-certificatemanager@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-0.28.0.tgz#ecccbb6c589bbd7961bec6b1a2b859f63c1bbcd5"
+  integrity sha512-8HRfwnHpZ5zaNTl8+Hto415SaKHygbOiupON1t6mIOMH9b++emxsUxSlPVcqzl70xnvqc+tiEeKGKmFMUjSVGw==
+  dependencies:
+    "@aws-cdk/aws-cloudformation" "^0.28.0"
+    "@aws-cdk/aws-iam" "^0.28.0"
+    "@aws-cdk/aws-lambda" "^0.28.0"
+    "@aws-cdk/aws-route53" "^0.28.0"
+    "@aws-cdk/cdk" "^0.28.0"
+
 "@aws-cdk/aws-cloudformation@^0.28.0":
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudformation/-/aws-cloudformation-0.28.0.tgz#c9f199ad6ddb3fd9b23772109118aba999b92b55"
@@ -58,6 +69,18 @@
     "@aws-cdk/aws-iam" "^0.28.0"
     "@aws-cdk/aws-lambda" "^0.28.0"
     "@aws-cdk/aws-sns" "^0.28.0"
+    "@aws-cdk/cdk" "^0.28.0"
+
+"@aws-cdk/aws-cloudfront@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudfront/-/aws-cloudfront-0.28.0.tgz#bdb9a525839ca46dd5a24b3516dbb823f539bc47"
+  integrity sha512-gmwSHzoQqYN53ejkiYUACHmzpijEOLJUENanLSrCkHgAcZ+amB8vufC24aM/pwYNvJshgRmIr/1OpB8Qzn2tDw==
+  dependencies:
+    "@aws-cdk/aws-certificatemanager" "^0.28.0"
+    "@aws-cdk/aws-iam" "^0.28.0"
+    "@aws-cdk/aws-kms" "^0.28.0"
+    "@aws-cdk/aws-route53" "^0.28.0"
+    "@aws-cdk/aws-s3" "^0.28.0"
     "@aws-cdk/cdk" "^0.28.0"
 
 "@aws-cdk/aws-cloudwatch@^0.28.0":
