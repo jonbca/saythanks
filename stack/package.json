@@ -29,6 +29,7 @@
         "@aws-cdk/aws-route53": "^0.28.0",
         "@aws-cdk/aws-s3": "^0.28.0",
         "@aws-cdk/aws-s3-notifications": "^0.28.0",
+        "@aws-cdk/aws-s3-deployment": "^0.28.0",
         "@aws-cdk/aws-sqs": "^0.28.0",
         "@aws-cdk/aws-stepfunctions": "^0.28.0",
         "@aws-cdk/cdk": "^0.28.0",
@@ -36,10 +37,10 @@
         "@aws-cdk/region-info": "^0.28.0",
         "@types/aws-lambda": "^8.10.23",
         "@types/node": "8.10.40",
+        "aws-cdk": "^0.28.0",
         "jest": "23.6.0",
         "source-map-support": "^0.5.9",
         "ts-jest": "^23.0.0",
-        "typescript": "^3.3.3333",
-        "aws-cdk": "^0.28.0"
+        "typescript": "^3.3.3333"
     }
 }

@@ -50,6 +50,16 @@
     "@aws-cdk/aws-iam" "^0.28.0"
     "@aws-cdk/cdk" "^0.28.0"
 
+"@aws-cdk/aws-cloudformation@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudformation/-/aws-cloudformation-0.28.0.tgz#c9f199ad6ddb3fd9b23772109118aba999b92b55"
+  integrity sha512-CDpuag+nOjshTSBJwGXIMMmbrUgz0r4ezuZoh4WfDtcZLzAikat2DtdKeKUwlQ7YSHu/SDWgZHse+QBBP6ap7Q==
+  dependencies:
+    "@aws-cdk/aws-iam" "^0.28.0"
+    "@aws-cdk/aws-lambda" "^0.28.0"
+    "@aws-cdk/aws-sns" "^0.28.0"
+    "@aws-cdk/cdk" "^0.28.0"
+
 "@aws-cdk/aws-cloudwatch@^0.28.0":
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudwatch/-/aws-cloudwatch-0.28.0.tgz#1ebb94183059785838c382f11e8e37671aa7b385"
@@ -149,6 +159,18 @@
     "@aws-cdk/cdk" "^0.28.0"
     "@aws-cdk/cx-api" "^0.28.0"
 
+"@aws-cdk/aws-s3-deployment@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3-deployment/-/aws-s3-deployment-0.28.0.tgz#8d6dbfec306bfcc27bfd9c0670ca12a3d8d82c56"
+  integrity sha512-UW/VN+oDcwXu1YarvGVG9lxLdX1UZDWyCyDKcNfHeVMgtAlfnSri3EcrnG57lxWr+MxknBoKnHrRrLabi08ilg==
+  dependencies:
+    "@aws-cdk/assets" "^0.28.0"
+    "@aws-cdk/aws-cloudformation" "^0.28.0"
+    "@aws-cdk/aws-iam" "^0.28.0"
+    "@aws-cdk/aws-lambda" "^0.28.0"
+    "@aws-cdk/aws-s3" "^0.28.0"
+    "@aws-cdk/cdk" "^0.28.0"
+
 "@aws-cdk/aws-s3-notifications@^0.28.0":
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3-notifications/-/aws-s3-notifications-0.28.0.tgz#efb2c664463d53fb8886267692972b16a9e152cb"
@@ -165,6 +187,20 @@
     "@aws-cdk/aws-iam" "^0.28.0"
     "@aws-cdk/aws-kms" "^0.28.0"
     "@aws-cdk/aws-s3-notifications" "^0.28.0"
+    "@aws-cdk/cdk" "^0.28.0"
+
+"@aws-cdk/aws-sns@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-sns/-/aws-sns-0.28.0.tgz#46487250614d0f63745e158f97c000d87627f204"
+  integrity sha512-sODq18dleHP9BWzaWKZFa8myrj8ga8NWxZkH/xX8ondnU92GyAuvr0vBUIi2ycvYiR5Z67ysPt479bYKTwG8Gg==
+  dependencies:
+    "@aws-cdk/aws-autoscaling-api" "^0.28.0"
+    "@aws-cdk/aws-cloudwatch" "^0.28.0"
+    "@aws-cdk/aws-events" "^0.28.0"
+    "@aws-cdk/aws-iam" "^0.28.0"
+    "@aws-cdk/aws-lambda" "^0.28.0"
+    "@aws-cdk/aws-s3-notifications" "^0.28.0"
+    "@aws-cdk/aws-sqs" "^0.28.0"
     "@aws-cdk/cdk" "^0.28.0"
 
 "@aws-cdk/aws-sqs@^0.28.0":
