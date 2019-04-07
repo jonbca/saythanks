@@ -23,14 +23,14 @@ export default class ServerBucket extends cdk.Construct {
         this.addCloudfrontDistribution(this.bucket);
     }
 
-    private addCloudfrontDistribution(bucket: s3.Bucket) {
+    private addCloudfrontDistribution(bucket: s3.Bucket): cloudfront.CloudFrontWebDistribution {
         const distribution = new cloudfront.CloudFrontWebDistribution(this, 'ClientAppDistribution', {
             originConfigs: [
                 {
                     s3OriginSource: {
                         s3BucketSource: bucket
                     },
-                    behaviors: [ {isDefaultBehavior: true }]
+                    behaviors: [{ isDefaultBehavior: true }, { pathPattern: '*.json', maxTtlSeconds: 0 }]
                 }
             ]
         });

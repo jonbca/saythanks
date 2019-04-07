@@ -15,6 +15,9 @@ export class SayThanksStack extends cdk.Stack {
 
         new apigateway.LambdaRestApi(this, 'CreateThankYou', { handler: lambda.handler });
 
-        new WebSiteDeployment(this, 'ReactWebSiteDeployment', {websiteBucket: bucket.bucket, pathToFiles: '../client/build'});
+        new WebSiteDeployment(this, 'ReactWebSiteDeployment', {
+            websiteBucket: bucket.bucket,
+            pathToFiles: '../client/build'
+        });
     }
 }
