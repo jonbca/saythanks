@@ -13,12 +13,9 @@ export default class PostThanksLambda extends cdk.Construct {
     public constructor(scope: cdk.Construct, id: string, props: PostThanksLambdaProps) {
         super(scope, id);
 
-        const accessBucketObjectPolicy = new iam.PolicyStatement(iam.PolicyStatementEffect.Allow)
-            .addActions('s3:PutObject', 's3:GetObject', 's3:DeleteObject')
-            .addResource(`${props.bucketArn}/*`);
-
         const accessBucketPolicy = new iam.PolicyStatement(iam.PolicyStatementEffect.Allow)
-            .addAction('s3:ListBucket')
+            .addActions('s3:PutObject*', 's3:GetObject*', 's3:DeleteObject*', 's3:List*', 's3:Abort*', 's3:GetBucket*')
+            .addResource(`${props.bucketArn}/*`)
             .addResource(props.bucketArn);
 
         this.handler = new lambda.Function(this, 'HelloHandler', {
@@ -29,6 +26,5 @@ export default class PostThanksLambda extends cdk.Construct {
 
         this.handler.addEnvironment('SERVER_BUCKET_NAME', props.bucketName);
         this.handler.addToRolePolicy(accessBucketPolicy);
-        this.handler.addToRolePolicy(accessBucketObjectPolicy);
     }
 }
