@@ -13,7 +13,7 @@ class App extends Component {
             <div className="App">
                 <main>
                     <ThankYouContainer
-                        url="http://localhost:3000/sample-thanks.json"
+                        url="/data/thanks.json"
                         loadThankYous={sampleDataLoaderIfDevelopment()}
                     />
                 </main>
