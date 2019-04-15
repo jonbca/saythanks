@@ -37,8 +37,8 @@ describe('<Grid />', () => {
                 toName: 'Foo',
                 fromName: 'Bar',
                 message: 'Msg',
-                timestamp: new Date(),
-            },
+                timestamp: new Date()
+            }
         ];
         const grid = shallow(<Grid thanks={thanks} />);
 

@@ -16,7 +16,7 @@ export default function loadSampleData(): Promise<ThankYouList> {
         toName: faker.name.findName(),
         fromName: faker.name.findName(),
         timestamp: faker.date.recent(),
-        message: faker.lorem.sentence(),
+        message: faker.lorem.sentence()
     }));
 
     return Promise.resolve({ thankYous });

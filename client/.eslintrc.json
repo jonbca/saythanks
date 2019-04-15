@@ -10,8 +10,7 @@
     "plugins": ["jest", "@typescript-eslint", "react"],
     "parserOptions": {
         "ecmaVersion": 2018,
-        "sourceType": "module",
-        "project": "client/tsconfig.json"
+        "sourceType": "module"
     },
     "env": {
         "jest/globals": true,
