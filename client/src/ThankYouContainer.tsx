@@ -11,7 +11,7 @@ export interface ThankYou {
 
 export interface ThankYouContainerState {
     thankYous: ThankYou[];
-    timer: NodeJS.Timeout | null;
+    timer: number | null;
 }
 
 export interface ThankYouData {
@@ -32,11 +32,11 @@ const thankYouLoader = async (url: string): Promise<ThankYouData> => {
         },
     });
 
-    return response.json() as Promise<ThankYouData>;
+    return response.json();
 };
 
 class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouContainerState> {
-    public static defaultProps = {
+    static defaultProps = {
         loadThankYous: thankYouLoader,
         refreshInterval: 30000,
     };
