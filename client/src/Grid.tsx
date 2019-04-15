@@ -56,14 +56,14 @@ const CardItem = styled.li`
 function renderThankYou(thankYou: ThankYou): ReactNode {
     return (
         <CardItem key={generateId(thankYou)}>
-            <Card {...thankYou}/>
+            <Card {...thankYou} />
         </CardItem>
     );
 }
 
 class Grid extends PureComponent<GridProps> {
     public static defaultProps = {
-        title: 'Thank-you!',
+        title: 'Thank-you!'
     };
 
     public render(): ReactNode {

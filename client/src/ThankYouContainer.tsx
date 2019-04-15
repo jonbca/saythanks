@@ -28,22 +28,22 @@ export interface ThankYouContainerProps {
 const thankYouLoader = async (url: string): Promise<ThankYouData> => {
     const response = await fetch(url, {
         headers: {
-            Accept: 'application/json',
-        },
+            Accept: 'application/json'
+        }
     });
 
     return response.json();
 };
 
 class ThankYouContainer extends Component<ThankYouContainerProps, ThankYouContainerState> {
-    static defaultProps = {
+    public static defaultProps = {
         loadThankYous: thankYouLoader,
-        refreshInterval: 30000,
+        refreshInterval: 30000
     };
 
     public state: ThankYouContainerState = {
         thankYous: [],
-        timer: null,
+        timer: null
     };
 
     public render(): ReactNode {

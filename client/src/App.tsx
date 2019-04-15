@@ -8,14 +8,11 @@ function sampleDataLoaderIfDevelopment(): (() => Promise<ThankYouData>) | undefi
 }
 
 class App extends Component {
-    render(): ReactNode {
+    public render(): ReactNode {
         return (
             <div className="App">
                 <main>
-                    <ThankYouContainer
-                        url="/data/thanks.json"
-                        loadThankYous={sampleDataLoaderIfDevelopment()}
-                    />
+                    <ThankYouContainer url="/data/thanks.json" loadThankYous={sampleDataLoaderIfDevelopment()} />
                 </main>
             </div>
         );

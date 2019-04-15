@@ -10,11 +10,15 @@
     "plugins": ["jest", "@typescript-eslint", "react"],
     "parserOptions": {
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "client/tsconfig.json"
     },
     "env": {
         "jest/globals": true,
         "browser": true,
         "es6": true
+    },
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
     }
 }
