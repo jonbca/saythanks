@@ -1,7 +1,6 @@
 import React, { ReactNode, PureComponent } from 'react';
 import styled from 'styled-components';
 import Card from './Card';
-import './Grid.css';
 import crypto from 'crypto';
 
 export interface ThankYou {

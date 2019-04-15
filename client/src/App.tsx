@@ -1,5 +1,4 @@
 import React, { Component, ReactNode } from 'react';
-import './App.css';
 import ThankYouContainer, { ThankYouData } from './ThankYouContainer';
 import sampleDataLoader from './lib/sampleDataLoader';
 

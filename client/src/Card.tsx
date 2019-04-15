@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css';
+import styled from 'styled-components';
 
 interface CardProp {
     toName: string;
@@ -8,11 +8,15 @@ interface CardProp {
     timestamp: Date;
 }
 
-const Card = ({ toName, message }: CardProp): JSX.Element => (
-    <div className="card">
-        <h1>{toName}</h1>
-        <p>{message}</p>
-    </div>
-);
+const Card = styled.div`
+    margin-left: 1rem;
+`;
 
-export default Card;
+export default function({ toName, message }: CardProp) {
+    return (
+        <Card>
+            <h1>{toName}</h1>
+            <p>{message}</p>
+        </Card>
+    );
+}
