@@ -6,7 +6,6 @@
         "faker": "^4.1.0",
         "react": "^16.8.5",
         "react-dom": "^16.8.5",
-        "react-pose": "^4.0.8",
         "react-scripts": "2.1.8",
         "typescript": "3.3.4000"
     },
